@@ -32,10 +32,10 @@
         (anything . "{src: '%splugin/animate/anything.js', async: true, condition: function() { return true; }}")))
 
 ;; And Python, JS
-;(org-babel-do-load-languages
-; 'org-babel-load-languages
-; '((python . t)
-;   (js . t)))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (shell . t)))
 
 
 ;; More from http://fgiasson.com/blog/index.php/2016/04/05/using-clojure-in-org-mode-and-implementing-asynchronous-processing/
