@@ -4,20 +4,19 @@
 (require 'org)
 ; Places where the agenda files exist.
 (setq org-agenda-files '("~/.org/agenda" "~/.org/notes"))
-
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-switchb)
-
 (setq org-log-done t) ;; This sets timestamps on tasks when finished.
 (setq org-startup-indented t)
 (setq org-src-fontify-natively t)
 (setq org-todo-keywords
       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 (setq org-default-notes-file "~/.org/on-the-fly-notes.org")
+
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-cr" 'remember)
+(global-set-key "\C-cb" 'org-switchb)
 
 ;; BEGIN -- https://github.com/stuartsierra/dotfiles
 ;; Org-babel and Clojure
@@ -35,8 +34,9 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
-   (shell . t)))
-
+   (shell . t)
+   (clojure . t)))
+(setq org-confirm-babel-evaluate nil)
 
 ;; More from http://fgiasson.com/blog/index.php/2016/04/05/using-clojure-in-org-mode-and-implementing-asynchronous-processing/
 (org-defkey org-mode-map "\C-x\C-e" 'cider-eval-last-sexp)
@@ -50,7 +50,7 @@
 (setq org-html-html5-fancy t)
 (setq org-src-tab-acts-natively t)
 
-(setq org-reveal-root "http://p.msync.org/reveal.js")
+(setq org-reveal-root "https://p.msync.org/reveal.js")
 (define-skeleton org-presentation-skeleton
   "Inserts org directives for org buffers supposed to generate a slide-show presentation, using reveal.js"
   "Title: "
@@ -149,8 +149,8 @@
   (insert (format-time-string "%Y-%m-%dT%T%:z")))
 (define-key global-map (kbd "\C-xt") 'now)
 
+(define-key global-map (kbd "<f7>") (lambda () (interactive) (cd "~/Projects/hugo-blog/")))
 (define-key global-map (kbd "<f9>") (lambda () (interactive) (org-hugo-export-to-md)))
-(define-key global-map (kbd "<f8>") (lambda () (interactive) (cd "~/.org/msync/")))
 
 (defun directory-files-recursive (directory match maxdepth)
   "List files in DIRECTORY and in its sub-directories. 

@@ -44,6 +44,7 @@
 (load "orgmode")
 (load "hugo")
 (load "clojure")
+(load "java")
 ;(load "haskell")
 
 ; https://joaotavora.github.io/yasnippet/snippet-expansion.html
