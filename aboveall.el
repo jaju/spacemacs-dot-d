@@ -1,10 +1,10 @@
 ;; From https://github.com/stuartsierra/dotfiles
 
 ; smex -> smart M-x enhancements - https://github.com/nonsequitur/smex
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;(require 'smex)
+;(smex-initialize)
+;(global-set-key (kbd "M-x") 'smex)
+;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;
 (global-set-key (kbd "H-<up>") 'previous-line)
