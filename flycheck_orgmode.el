@@ -61,7 +61,7 @@
   "#+SUMMARY: \n"
   "#+DATE: " (now) "\n"
   "#+LASTMOD: " (now) "\n"
-  "#+TAGS[]: \n"
+  "#+TAGS: \n"
   "#+HUGO_CATEGORIES: \n"
   "#+HUGO_DRAFT: true\n"
   "#+PROPERTY: header-args:clojure :exports source :results output :comments link :session *clojure-nrepl*\n"
@@ -78,7 +78,7 @@
   "#+SUMMARY: \n"
   "#+DATE: " (now) "\n"
   "#+LASTMOD: " (now) "\n"
-  "#+TAGS[]: \n"
+  "#+TAGS: \n"
   "#+HUGO_CATEGORIES: \n"
   "#+HUGO_DRAFT: true\n"
   "#+PROPERTY: header-args:clojure :exports source :results output :comments link :session *clojure-nrepl*\n"
@@ -118,7 +118,7 @@
   (insert (format-time-string "%Y-%m-%dT%T%:z")))
 (define-key global-map (kbd "\C-xt") 'now)
 
-(define-key global-map (kbd "<f7>") (lambda () (interactive) (cd "~/.org/msync/notes")))
+(define-key global-map (kbd "<f7>") (lambda () (interactive) (cd "~/Projects/hugo-blog/")))
 (define-key global-map (kbd "<f9>") (lambda () (interactive) (org-hugo-export-to-md)))
 
 (defun directory-files-recursive (directory match maxdepth)
