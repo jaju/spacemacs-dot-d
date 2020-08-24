@@ -1,14 +1,7 @@
+;;; java.el --- Java!
+;;; Commentary:
+;;; Code:
 (require 'cc-mode)
-
-(condition-case nil
-    (require 'use-package)
-  (file-error
-   (require 'package)
-   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-   (package-initialize)
-   (package-refresh-contents)
-   (package-install 'use-package)
-   (require 'use-package)))
 
 (use-package projectile :ensure t)
 (use-package yasnippet :ensure t)
@@ -29,3 +22,6 @@
 (add-hook 'java-mode-hook #'lsp)
 (add-hook 'java-mode-hook 'flycheck-mode)
 (add-hook 'java-mode-hook 'company-mode)
+
+(provide 'java)
+;;; java.el ends here
