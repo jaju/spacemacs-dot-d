@@ -1,3 +1,6 @@
+;;; custom.el --- Custom Settings
+;;; Commentary:
+;;; Code:
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -7,5 +10,5 @@
 ; '(org-time-stamp-custom-formats "%Y-%m-%dT%T%:z")
  '(tramp-syntax 'default nil (tramp)))
 
-;;(require 'lsp-java)
-;;(add-hook 'java-mode-hook #'lsp)
+(provide 'custom)
+;;; custom.el ends here
