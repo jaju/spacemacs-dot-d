@@ -1,5 +1,10 @@
+;;; aboveall.el --- Bad name with the hope that I will remember to
+;;; load this file above all.
+
+;;; Commentary:
 ;; From https://github.com/stuartsierra/dotfiles
 
+;;; Code:
 ; smex -> smart M-x enhancements - https://github.com/nonsequitur/smex
 ;(require 'smex)
 ;(smex-initialize)
@@ -25,3 +30,5 @@
 ;     (setq org-export-async-init-file
 ;           (expand-file-name "init-org-async.el" (file-name-directory
 ;                                                  user-init-file)))))
+(provide 'aboveall)
+;;; aboveall.el ends here
