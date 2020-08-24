@@ -1,3 +1,11 @@
+;;; personal.el --- My personal configuration for emacs
+
+;;; Commentary:
+;;; This is applied after the other top-level
+;;; Emacs super-configurers like doom or spacemacs
+
+;;; Code:
+
 (defvar current-user
   (getenv "USER"))
 
@@ -10,17 +18,19 @@
 
 (add-to-list 'load-path personal-d-directory)
 
-(setq personal-packages-list
+(defvar personal-packages-list
   '("ox-hugo"
     "easy-hugo"
     "org-reveal"))
 
-(defun add-package-to-load-path (path)
-  (add-to-list 'load-path (concat personal-packages-directory "/" path)))
+(defun add-package-to-load-path (PATH)
+  "Add given PATH to the 'load-path'."
+  (add-to-list 'load-path (concat personal-packages-directory "/" PATH)))
 (mapc #'add-package-to-load-path personal-packages-list)
 
 (setq gc-cons-threshold 50000000)
 (setq large-file-warning-threshold 10000000) ; 10 MB
+(setq read-process-output-max (* 1024 1024)) ;; Bigger value nice for lsp-mode
 
 (require 'cl-lib)
 (require 'package)
@@ -29,17 +39,13 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-;(line-number-mode t)
-;(column-number-mode t)
-;(size-indication-mode t)
-
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq require-final-newline t)
 (delete-selection-mode t)
 (setq tab-always-indent 'complete)
 
-(setq save-place-file ".saveplace")
+(defvar save-place-file ".saveplace")
 (save-place-mode 1)
 
 (load "aboveall")
@@ -54,3 +60,6 @@
 ; https://joaotavora.github.io/yasnippet/snippet-expansion.html
 ; For the comman:d and explanation of yas-maybe-expand
 ;(define-key yas-minor-mode-map (kbd "TAB") yas-maybe-expand)
+
+(provide 'personal)
+;;; personal.el ends here
