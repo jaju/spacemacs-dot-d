@@ -32,7 +32,7 @@
 (setq large-file-warning-threshold 10000000) ; 10 MB
 (setq read-process-output-max (* 1024 1024)) ;; Bigger value nice for lsp-mode
 
-(require 'cl-lib)
+;;(require 'cl-lib)
 (require 'package)
 
 (setq scroll-margin 0
