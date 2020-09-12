@@ -1,9 +1,0 @@
-[submodule "packages/ox-hugo"]
-	path = packages/ox-hugo
-	url = git@github.com:kaushalmodi/ox-hugo.git
-[submodule "packages/easy-hugo"]
-	path = packages/easy-hugo
-	url = git@github.com:masasam/emacs-easy-hugo.git
-[submodule "packages/org-reveal"]
-	path = packages/org-reveal
-	url = git@github.com:yjwen/org-reveal.git
